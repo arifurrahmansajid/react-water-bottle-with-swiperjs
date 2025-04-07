@@ -6,70 +6,74 @@ import 'swiper/css';
 import 'swiper/css/navigation';
 import 'swiper/css/pagination';
 
-const sampleBottles = [
+const premiumBottles = [
   {
     id: 1,
-    name: "HydroFlex Bottle",
-    image: "https://images.unsplash.com/photo-1571847143833-3f96d95bc313?auto=format&fit=crop&w=800&q=80",
-    description: "A stylish reusable bottle for everyday use.",
-    price: 15.99
+    name: "AquaVista Glass Bottle",
+    image: "https://images.unsplash.com/photo-1523362628745-0c100150b504?w=600&h=400&fit=crop",
+    description: "Elegant glass bottle with bamboo lid, 750ml capacity",
+    price: 29.99
   },
   {
     id: 2,
-    name: "EcoSip Bottle",
-    image: "https://images.unsplash.com/photo-1611080626919-d519f88b4018?auto=format&fit=crop&w=800&q=80",
-    description: "Keeps your drinks cold or hot for hours.",
-    price: 19.99
-  },
-  {
-    id: 3,
-    name: "SteelHydra",
-    image: "https://images.unsplash.com/photo-1592842232371-06156353c281?auto=format&fit=crop&w=800&q=80",
-    description: "Durable stainless steel bottle with leak-proof cap.",
-    price: 24.99
-  },
-
-  {
-    id: 4,
-    name: "HydroFlex Bottle",
-    image: "https://images.unsplash.com/photo-1571847143833-3f96d95bc313?auto=format&fit=crop&w=800&q=80",
-    description: "A stylish reusable bottle for everyday use.",
-    price: 15.99
+    name: "TerraStainless Pro",
+    image: "https://images.unsplash.com/photo-1625708458528-802ec79b1ed8?w=600&h=400&fit=crop",
+    description: "Double-walled stainless steel, keeps temp for 24hrs",
+    price: 39.99
   },
   
+  {
+    id: 4,
+    name: "NordicWood Flask",
+    image: "https://images.unsplash.com/photo-1602143407151-7111542de6e8?w=600&h=400&fit=crop",
+    description: "Sustainable oak wood exterior with stainless interior",
+    price: 49.99
+  },
+  {
+    id: 5,
+    name: "UrbanSleek Matte",
+    image: "https://images.pexels.com/photos/1342529/pexels-photo-1342529.jpeg",
+    description: "Premium matte black finish with smart cap display",
+    price: 34.99
+  }
 ];
 
 const MySlider = () => {
   return (
-    <div className="max-w-6xl mx-auto py-10 px-4">
-      <h2 className="text-3xl font-bold text-center mb-8 text-primary">New Bottles</h2>
+    <div className="max-w-7xl mx-auto py-12 px-4 sm:px-6">
+      <h2 className="text-3xl md:text-4xl font-bold text-center mb-10 text-primary">Premium Collection</h2>
 
       <Swiper
         modules={[Navigation, Pagination]}
-        spaceBetween={20}
+        spaceBetween={30}
         slidesPerView={1}
         navigation
         pagination={{ clickable: true }}
         loop={true}
         breakpoints={{
-          640: { slidesPerView: 1 },
-          768: { slidesPerView: 2 },
-          1024: { slidesPerView: 3 },
+          640: { slidesPerView: 1.5 },
+          768: { slidesPerView: 2.3 },
+          1024: { slidesPerView: 3.2 },
+          1280: { slidesPerView: 4 }
         }}
-        className="rounded-xl"
+        className="pb-12"
       >
-        {sampleBottles.map((bottle) => (
-          <SwiperSlide key={bottle.id}>
-            <div className="card bg-base-100 shadow-xl">
-              <figure className="px-4 pt-4">
-                <img src={bottle.image} alt={bottle.name} className="w-full h-48 object-cover rounded-xl" />
+        {premiumBottles.map((bottle) => (
+          <SwiperSlide key={bottle.id} className="py-2">
+            <div className="card bg-base-100 shadow-xl hover:shadow-2xl transition-shadow duration-300 h-full">
+              <figure className="px-6 pt-6">
+                <img 
+                  src={bottle.image} 
+                  alt={bottle.name} 
+                  className="w-full h-64 object-contain rounded-lg bg-gray-50 p-4"
+                />
               </figure>
               <div className="card-body">
-                <h2 className="card-title">{bottle.name}</h2>
-                <p className="text-sm">{bottle.description}</p>
+                <h2 className="card-title text-xl">{bottle.name}</h2>
+                <p className="text-gray-600">{bottle.description}</p>
                 <div className="card-actions justify-between items-center mt-4">
-                  <span className="text-primary font-bold">${bottle.price}</span>
-                  <button className="btn btn-outline btn-sm btn-primary">Buy Now</button>
+                  <span className="text-primary font-bold text-lg">${bottle.price}</span>
+                  <button className="btn btn-primary btn-sm md:btn-md">Add to Cart</button>
                 </div>
               </div>
             </div>
