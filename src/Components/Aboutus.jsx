@@ -6,7 +6,7 @@ const Aboutus = () => {
       {/* Left side: Text content */}
       <div className="flex-1 space-y-4 md:space-y-6">
         <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-primary">
-          About WaterButto!
+          About WaterBottle!
         </h2>
         <p className="text-base lg:text-lg text-gray-600 leading-relaxed">
           At WaterButto!, we believe hydration should be stylish, sustainable, and accessible to everyone.
