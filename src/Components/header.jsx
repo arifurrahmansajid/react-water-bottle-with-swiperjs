@@ -6,7 +6,7 @@ const header = () => {
        <div className="navbar bg-base-100 shadow-md px-4">
       {/* Left: Brand name */}
       <div className="navbar-start">
-        <a className="text-xl font-bold text-primary">WaterButtol</a>
+        <a className="text-xl font-bold text-primary">WaterBottle</a>
       </div>
 
       {/* Center: Menu items */}
